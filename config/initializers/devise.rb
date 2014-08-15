@@ -134,4 +134,10 @@ Devise.setup do |config|
   config.sign_out_via = :get
 
   config.case_insensitive_keys = [:email]
+  
+  config.omniauth :stripe_connect,
+    ENV['STRIPE_CONNECT_CLIENT_ID'],
+    ENV['STRIPE_SECRET_KEY'],
+    :scope => 'read_write', # or :scope => 'read_only'
+    :stripe_landing => 'register' # or :stripe_landing => 'register'
 end
