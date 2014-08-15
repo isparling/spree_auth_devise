@@ -8,9 +8,12 @@ Spree::Core::Engine.add_routes do
              :skip => [:unlocks],
              :path_names => { :sign_out => 'logout' },
              :path_prefix => :user
+             
 
   resources :users, :only => [:edit, :update]
-
+  
+  
+  
   devise_scope :spree_user do
     get '/login' => 'user_sessions#new', :as => :login
     post '/login' => 'user_sessions#create', :as => :create_new_session
@@ -22,6 +25,7 @@ Spree::Core::Engine.add_routes do
     get '/password/change' => 'user_passwords#edit', :as => :edit_password
     put '/password/change' => 'user_passwords#update', :as => :update_password
   end
+  
 
   get '/checkout/registration' => 'checkout#registration', :as => :checkout_registration
   put '/checkout/registration' => 'checkout#update_registration', :as => :update_checkout_registration
