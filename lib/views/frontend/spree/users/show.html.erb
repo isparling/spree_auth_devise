@@ -7,6 +7,12 @@
   </dl>
 </div>
 
+<div data-hook="stripe_connect">
+  <%= link_to spree_user_omniauth_authorize_path(provider: :stripe_connect), class: 'stripe-connect' do %>
+    <span>Connect with Stripe</span>
+  <% end %>
+</div>
+
 <div data-hook="account_my_orders" class="account-my-orders">
 
   <h3><%= Spree.t(:my_orders) %></h3>

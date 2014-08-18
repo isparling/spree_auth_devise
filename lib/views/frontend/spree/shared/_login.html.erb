@@ -18,10 +18,6 @@
   <p><%= f.submit Spree.t(:login), :class => 'button primary', :tabindex => 4 %></p>
   
   <p>
-    <%= link_to spree_user_omniauth_authorize_path(provider: :stripe_connect), class: 'stripe-connect' do %>
-    
-      <span>Connect with Stripe</span>
-    <% end %>
     
     <!-- <a href="#" class="stripe-connect"><span>Connect with Stripe</span></a> -->
   </p>
