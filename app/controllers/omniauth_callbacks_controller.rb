@@ -1,7 +1,8 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   
   def failure
-    flash[:notice] = "Kindly sign in with your Stripe account in order to continue"
+
+    flash[:notice] = request.env["omniauth.error"]
     redirect_to '/login'
   end
   
