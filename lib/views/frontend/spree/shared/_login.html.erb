@@ -22,4 +22,10 @@
     <!-- <a href="#" class="stripe-connect"><span>Connect with Stripe</span></a> -->
   </p>
   
+  <div data-hook="stripe_connect">
+    <%= link_to spree_user_omniauth_authorize_path(provider: :stripe_connect), class: 'stripe-connect' do %>
+      <span>Connect with Stripe</span>
+    <% end %>
+  </div>
+  
 <% end %>
